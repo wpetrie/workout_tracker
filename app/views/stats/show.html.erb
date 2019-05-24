@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @stat.date %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @stat.weight %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @stat.comments %>
+</p>
+
+<%= link_to 'Edit', edit_stat_path(@stat) %> |
+<%= link_to 'Back', stats_path %>
