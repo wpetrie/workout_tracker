@@ -3,7 +3,6 @@
 <section>
 <div class='container'>
 <h1>Weight</h1>
-
 <div=class="card">
   <div class="card-body">
     <table class="table">
@@ -30,5 +29,6 @@
       <%= link_to 'Add New', new_stat_path, :class => "btn btn-primary" %>
       </table>
     </div>
+    <%= will_paginate @stats %>
     <%= line_chart @stats.group(:date).sum(:weight) %>
     

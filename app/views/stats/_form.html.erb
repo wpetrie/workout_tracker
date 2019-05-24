@@ -1,3 +1,5 @@
+<section>
+<div class="container">
 <%= form_with(model: stat, local: true) do |form| %>
   <% if stat.errors.any? %>
     <div id="error_explanation">
@@ -27,6 +29,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Submit", :class => "btn btn-primary" %><br />
   </div>
 <% end %>
