@@ -66,5 +66,4 @@ gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem "chartkick"
 gem 'momentjs-rails', '~> 2.17', '>= 2.17.1'
-gem 'will_paginate', '~> 3.1', '>= 3.1.7'
-gem 'will_paginate-bootstrap4'
+gem 'apartment', '~> 1.0', '>= 1.0.2'

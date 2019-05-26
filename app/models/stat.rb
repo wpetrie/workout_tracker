@@ -1,4 +1,2 @@
 class Stat < ApplicationRecord
-
 end
-

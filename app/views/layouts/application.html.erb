@@ -21,7 +21,7 @@
   </head>
 
   <body style="font-size:15px">
-  <div class="page">
+
   <!-- Main Navbar-->
   <header class="header">
     <nav class="navbar">
@@ -33,24 +33,24 @@
               <div class="brand-text d-none d-lg-inline-block" style="font-size:18px"><span>Infinite Fitness </span><strong>Tracking App (ver 1.0.1)</strong></div>
               <div class="brand-text d-none d-sm-inline-block d-lg-none"><strong>IF</strong></div></a>
             <!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
+            </div>
+            <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+            <img src="/assets/logo-alpha.png" style="height:110px">
+            <div class="nav-item"><a href="login.html" class="nav-link logout"> <span class="d-none d-sm-inline">Logout</span><i class="fa fa-sign-out"></i></a>
+            </ul>
           </div>
-          <!-- Navbar Menu -->
-          <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
-          <li class="nav-item"><img src="/assets/logo-alpha.png" style="height:100px"></li>
-          <li class="nav-item"><a href="login.html" class="nav-link logout"> <span class="d-none d-sm-inline">Logout</span><i class="fa fa-sign-out"></i></a></li>
-        </ul>
         </div>
       </div>
     </div>
   </header>
   <div class="page-content d-flex align-items-stretch">
   <!-- Side Navbar -->
-  <nav class="side-navbar" style="position:left">
+  <nav class="side-navbar">
     <!-- Sidebar Header-->
     <div class="sidebar-header d-flex align-items-center">
       <div class="avatar"><img src="/assets/default-avatar.png" alt="..." class="img-fluid rounded-circle"></div>
       <div class="title">
-        <h1 class="h1">Current User</h1>
+        <h1 class="h4">Current User</h1>
         <p>Email</p>
       </div>
     </div>
@@ -59,38 +59,51 @@
       <li><%= link_to 'Home', stats_path %></li>
       <li><%= link_to 'New', new_stat_path %></li>
     </ul><span class="heading">Extras</span>
+
   </nav>
   <div class="content-inner">
   <!-- Page Header-->
   <header class="page-header">
   <div class="container-fluid">
-      <h2 class="no-margin-bottom" style="font-size:2.5rem">Dashboard</h2>
+      <h2 class="no-margin-bottom">Dashboard</h2>
     </div>
   </header>
 
+  <div class="container-fluid">
+
+<% if notice %>
+<p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+<p class="alert alert-danger"><%= alert %></p>
+<% end %>
+
     <%= yield %>
-  </div>
+
+    </section>
   <!-- Page Footer-->
           <footer class="main-footer">
-            <div class="container">
+            <div class="container-fluid">
               <div class="row">
                 <div class="col-sm-6">
-                  <p>Infinite Fitness &copy; 2016-2019</p>
+                  <p>Infinite Fitness &copy; 2019</p>
                 </div>
                 <div class="col-sm-6 text-right">
-                  <p>Version 1.4.5</p>
+                  <p>Design by <a href="#" class="external">Wpetrie</a></p>
+                  <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
                 </div>
               </div>
             </div>
           </footer>
-        <script src="https://d19m59y37dris4.cloudfront.net/admin-premium/1-4-5/js/front.js"></script>
-        <!-- JavaScript files-->
-        <script src="https://d19m59y37dris4.cloudfront.net/admin-premium/1-4-5/vendor/jquery/jquery.min.js"></script>
-        <script src="https://d19m59y37dris4.cloudfront.net/admin-premium/1-4-5/vendor/popper.js/umd/popper.min.js"> </script>
-        <script src="https://d19m59y37dris4.cloudfront.net/admin-premium/1-4-5/vendor/bootstrap/js/bootstrap.min.js"></script>
-        <script src="https://d19m59y37dris4.cloudfront.net/admin-premium/1-4-5/vendor/jquery.cookie/jquery.cookie.js"> </script>
-        <script src="https://d19m59y37dris4.cloudfront.net/admin-premium/1-4-5/vendor/chart.js/Chart.min.js"></script>
-        <script src="https://d19m59y37dris4.cloudfront.net/admin-premium/1-4-5/vendor/jquery-validation/jquery.validate.min.js"></script>
-        <script src="https://d19m59y37dris4.cloudfront.net/admin-premium/1-4-5/js/charts-home.js"></script>
+          <!-- JavaScript files-->
+          <script src="https://d19m59y37dris4.cloudfront.net/admin/1-4-5/vendor/jquery/jquery.min.js"></script>
+          <script src="https://d19m59y37dris4.cloudfront.net/admin/1-4-5/vendor/popper.js/umd/popper.min.js"> </script>
+          <script src="https://d19m59y37dris4.cloudfront.net/admin/1-4-5/vendor/bootstrap/js/bootstrap.min.js"></script>
+          <script src="https://d19m59y37dris4.cloudfront.net/admin/1-4-5/vendor/jquery.cookie/jquery.cookie.js"> </script>
+          <script src="https://d19m59y37dris4.cloudfront.net/admin/1-4-5/vendor/chart.js/Chart.min.js"></script>
+          <script src="https://d19m59y37dris4.cloudfront.net/admin/1-4-5/vendor/jquery-validation/jquery.validate.min.js"></script>
+          <script src="https://d19m59y37dris4.cloudfront.net/admin/1-4-5/js/charts-home.js"></script>
+          <!-- Main File-->
+          <script src="https://d19m59y37dris4.cloudfront.net/admin/1-4-5/js/front.js"></script>
   </body>
 </html>
