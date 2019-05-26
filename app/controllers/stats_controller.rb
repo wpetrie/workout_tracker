@@ -4,7 +4,7 @@ class StatsController < ApplicationController
   # GET /stats
   # GET /stats.json
   def index
-    @stats = Stat.all
+    @stats = Stat.paginate(:page => params[:page], per_page: 5 ).order('created_at DESC')  
   end
 
   # GET /stats/1
@@ -56,7 +56,7 @@ class StatsController < ApplicationController
   def destroy
     @stat.destroy
     respond_to do |format|
-      format.html { redirect_to stats_url, notice: 'Weight Successfully Deleted' }
+      format.html { redirect_to stats_url, notice: 'Weight Successfully Changed' }
       format.json { head :no_content }
     end
   end
