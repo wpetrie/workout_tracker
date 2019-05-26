@@ -28,7 +28,7 @@ class StatsController < ApplicationController
 
     respond_to do |format|
       if @stat.save
-        format.html { redirect_to @stat, notice: 'Weight Successfully Changed' }
+        format.html { redirect_to @stat, notice: 'Water Successfully Changed' }
         format.json { render :show, status: :created, location: @stat }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class StatsController < ApplicationController
   def update
     respond_to do |format|
       if @stat.update(stat_params)
-        format.html { redirect_to @stat, notice: 'Weight Successfully Updated' }
+        format.html { redirect_to @stat, notice: 'Water Successfully Updated' }
         format.json { render :show, status: :ok, location: @stat }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class StatsController < ApplicationController
   def destroy
     @stat.destroy
     respond_to do |format|
-      format.html { redirect_to stats_url, notice: 'Weight Successfully Changed' }
+      format.html { redirect_to stats_url, notice: 'Water Successfully Changed' }
       format.json { head :no_content }
     end
   end

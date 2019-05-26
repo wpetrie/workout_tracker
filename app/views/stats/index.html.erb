@@ -1,41 +1,41 @@
 <div class="container-fluid">
-<div class="card card-body">
-
-<h1>Weight</h1>
-<div class="actions">
-<%= link_to 'Enter New', new_stat_path, :class => "btn btn-primary" %>
-</div>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th>Weight</th>
-      <th>Comments</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @stats.each do |stat| %>
-      <tr>
-        <td><%= stat.date %></td>
-        <td><%= stat.weight %></td>
-        <td><%= truncate(stat.comments, length:10) %></td>
-        <td><%= link_to 'View', stat %></td>
-        <td><%= link_to 'Delete', stat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-</div>
-<%= will_paginate @Stat, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
-<br>
-</div>
-<br>
-</div>
-<div class="container-fluid">
   <div class="card card-body">
-<%= line_chart @stats.group(:date).sum(:weight) %>
+
+  <h1>Water</h1>
+    <div class="actions">
+      <%= link_to 'Enter New', new_stat_path, :class => "btn btn-primary" %>
+    </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Liters</th>
+        <th>Comments</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @stats.each do |stat| %>
+        <tr>
+          <td><%= stat.date %></td>
+          <td><%= stat.weight %></td>
+          <td><%= truncate(stat.comments, length:10) %></td>
+          <td><%= link_to 'View', stat %></td>
+          <td><%= link_to 'Delete', stat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<%= will_paginate @Stat, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+<div class="actions">
+  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Show Graph
+  </a></div><br />
+  <div class="collapse" id="collapseExample">
+  <%= line_chart @stats.group(:date).sum(:weight), discrete:true %>
+</div>
+</div>
 </div>
 </div>

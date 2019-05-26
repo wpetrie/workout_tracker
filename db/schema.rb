@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_26_154916) do
+ActiveRecord::Schema.define(version: 2019_05_26_183901) do
 
   create_table "stats", force: :cascade do |t|
     t.date "date", null: false
-    t.integer "weight", null: false
+    t.float "weight", null: false
     t.text "comments", default: ""
     t.integer "user_id", null: false
     t.datetime "remember_created_at"
