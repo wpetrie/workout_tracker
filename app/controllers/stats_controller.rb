@@ -4,7 +4,7 @@ class StatsController < ApplicationController
   # GET /stats
   # GET /stats.json
   def index
-    @stats = Stat.paginate(:page => params[:page], per_page: 5 ).order('created_at DESC')  
+    @stats = current_user.stats.paginate(:page => params[:page], per_page: 5 ).order('created_at DESC')  
   end
 
   # GET /stats/1
@@ -14,7 +14,7 @@ class StatsController < ApplicationController
 
   # GET /stats/new
   def new
-    @stat = Stat.new
+    @stat = current_user.stats.build
   end
 
   # GET /stats/1/edit
@@ -24,7 +24,7 @@ class StatsController < ApplicationController
   # POST /stats
   # POST /stats.json
   def create
-    @stat = Stat.new(stat_params)
+    @stat = current_user.stats.new(stat_params)
 
     respond_to do |format|
       if @stat.save

@@ -1,3 +1,5 @@
+<div class="container-fluid">
+    <div class="card text-center">
 <p>
   <strong>Date:</strong>
   <%= @stat.date %>
@@ -13,6 +15,7 @@
   <%= @stat.comments %>
 </p>
 
-<%= link_to 'Edit', edit_stat_path(@stat) %> |
+<%= link_to 'Edit', edit_stat_path(@stat) %> <br />
 <%= link_to 'Back', stats_path %>
-
+  </div>
+</div>

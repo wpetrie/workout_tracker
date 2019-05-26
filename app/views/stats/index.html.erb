@@ -21,16 +21,15 @@
       <tr>
         <td><%= stat.date %></td>
         <td><%= stat.weight %></td>
-        <td><%= stat.comments %></td>
+        <td><%= truncate(stat.comments, length:10) %></td>
         <td><%= link_to 'View', stat %></td>
-        <td><%= link_to 'Edit', edit_stat_path(stat) %></td>
         <td><%= link_to 'Delete', stat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 </div>
-<%= will_paginate @Stats, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+<%= will_paginate @Stat, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
 <br>
 </div>
 <br>
