@@ -34,7 +34,7 @@
     Show Graph
   </a></div><br />
   <div class="collapse" id="collapseExample">
-  <%= line_chart @stats.group(:date).sum(:weight), discrete:true %>
+  <%= line_chart current_user.stats.group(:date).sum(:weight), discrete: true %>
 </div>
 </div>
 </div>

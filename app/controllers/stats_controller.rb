@@ -4,7 +4,7 @@ class StatsController < ApplicationController
   # GET /stats
   # GET /stats.json
   def index
-    @stats = current_user.stats.paginate(:page => params[:page], per_page: 5 ).order('created_at DESC')  
+    @stats = current_user.stats.paginate(:page => params[:page], per_page: 5 ).order('created_at DESC') 
   end
 
   # GET /stats/1
