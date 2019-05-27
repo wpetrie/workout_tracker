@@ -45,9 +45,9 @@ development:
   adapter: postgresql
   encoding: unicode
   database: workout_tracker_development
-  host: localhost
+  host: 159.203.20.35
   pool: 5
-  username: postgres
+  username: deploy
   password: Shelby00
   timeout: 5000
  
@@ -78,6 +78,6 @@ test:
   database: workout_tracker_test
   host: localhost
   pool: 5
-  username: postgres
+  username: deploy
   password: Shelby00
   timeout: 5000
