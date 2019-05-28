@@ -54,17 +54,19 @@
     <div class="sidebar-header d-flex align-items-center">
       <div class="avatar"><img src="/images/default-avatar.png" alt="..." class="img-fluid rounded-circle"></div>
       <div class="title">
-        <% if user_signed_in? %>
-          <%= current_user.email %>
-        <% else %>
-          <h1> Guest </h1>
-        <% end %>
-      </div>
+      <% if user_signed_in? %>
+      <h1><%= current_user.name %></h1>
+      <p><%= current_user.email %></p>
+    <% else %>
+      <h1> Guest </h1>
+    <% end %>
+    </div>
     </div>
     <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
     <ul class="list-unstyled">
       <li><%= link_to 'Home', stats_path %></li>
       <li><%= link_to 'New', new_stat_path %></li>
+      <li><%= link_to 'Report Bug', "https://form.jotform.com/91474487590267", target: :_blank %>
     </ul><span class="heading">Extras</span>
     <ul class="list-unstyled">
     </ul>  
