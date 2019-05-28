@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 2019_05_27_181859) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
-    t.integer "record_id", null: false
-    t.integer "blob_id", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2019_05_27_181859) do
     t.date "date", null: false
     t.float "weight", null: false
     t.text "comments", default: ""
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -48,7 +48,6 @@ ActiveRecord::Schema.define(version: 2019_05_27_181859) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name", default: "", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -56,14 +55,14 @@ ActiveRecord::Schema.define(version: 2019_05_27_181859) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "subdomain"
     t.boolean "admin"
     t.string "birthdate"
     t.string "gender"
     t.string "phone_number"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["name"], name: "index_users_on_name"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "stats", "users"
 end
