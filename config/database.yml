@@ -45,10 +45,10 @@ development:
   adapter: postgresql
   encoding: unicode
   database: workout_tracker_development
-  host: 159.203.9.159
+  host: localhost
   pool: 5
-  username: rails
-  password: 790fa994f663df945eff33064f5db515
+  username: postgres
+  password: Shelby00
   timeout: 5000
  
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -76,16 +76,8 @@ test:
   adapter: postgresql
   encoding: unicode
   database: workout_tracker_test
-  host: 159.203.9.159
+  host: localhost
   pool: 5
-  username: rails
-  password: 790fa994f663df945eff33064f5db515
+  username: postgres
+  password: Shelby00
   timeout: 5000
-
-production:
-  adapter: postgresql
-  encoding: unicode
-  database: workout_tracker_production
-  pool: 5
-  username: rails
-  password: 790fa994f663df945eff33064f5db515
