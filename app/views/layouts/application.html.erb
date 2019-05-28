@@ -35,7 +35,7 @@
             <!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
             </div>
             <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
-            <img src="/assets/logo-alpha.png" style="height:110px">
+            <img src="/images/logo-alpha.png" style="height:110px">
             <div class="nav-item">
               <% if user_signed_in? %>
               <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
@@ -52,7 +52,7 @@
   <nav class="side-navbar">
     <!-- Sidebar Header-->
     <div class="sidebar-header d-flex align-items-center">
-      <div class="avatar"><img src="/assets/default-avatar.png" alt="..." class="img-fluid rounded-circle"></div>
+      <div class="avatar"><img src="/images/default-avatar.png" alt="..." class="img-fluid rounded-circle"></div>
       <div class="title">
         <% if user_signed_in? %>
           <%= current_user.email %>
