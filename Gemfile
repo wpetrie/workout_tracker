@@ -65,13 +65,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
 gem 'bootstrap-sass'
-gem 'jquery-rails'
 gem "chartkick"
 gem 'momentjs-rails', '~> 2.17', '>= 2.17.1'
-gem 'sidekiq'
 gem 'will_paginate', '~> 3.1', '>= 3.1.7'
 gem 'will_paginate-bootstrap4'
 gem 'groupdate'
-gem 'gravatar_image_tag'
 gem 'rails_admin', '~> 1.3'
 gem 'kaminari'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'

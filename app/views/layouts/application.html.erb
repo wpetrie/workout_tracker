@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
   </head>
 
   <body style="font-size:13px">
@@ -34,13 +33,13 @@
               <div class="brand-text d-none d-sm-inline-block d-lg-none"><strong>IF</strong></div></a>
             <!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
             </div>
-            <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
-            <img src="/images/logo-alpha.png" style="height:110px">
-            <div class="nav-item">
+            <ul class="nav justify-content-end">
+              <li class="nav-item">
+                <img src="/images/logo-alpha.png" style="height:110px"></li>
+              <li class="nav-item">
               <% if user_signed_in? %>
-              <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+              <%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
               <% end %>
-            </div>
             </ul>
           </div>
         </div>
@@ -62,14 +61,20 @@
     <% end %>
     </div>
     </div>
-    <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
-    <ul class="list-unstyled">
-      <li><%= link_to 'Home', stats_path %></li>
-      <li><%= link_to 'New', new_stat_path %></li>
-      <li><%= link_to 'Report Bug', "https://form.jotform.com/91474487590267", target: :_blank %>
-    </ul><span class="heading">Extras</span>
-    <ul class="list-unstyled">
-    </ul>  
+    <!-- Sidebar Navidation Menus-->
+    <span class="heading"><h1>Profile</h1></span>
+        <hr>
+    
+    <span class="heading"><h1>Main</h1></span>
+      <ul class="list-unstyled">
+        <li><%= link_to 'Home', stats_path %></li>
+        <li><%= link_to 'New', new_stat_path %></li>
+        <li><%= link_to 'Report Bug', "https://form.jotform.com/91474487590267", target: :_blank %>
+      </ul>
+      <hr>
+    <span class="heading"><h1>Extras</h1></span>
+      <ul class="list-unstyled">
+      </ul>  
 
   </nav>
   <div class="content-inner">
@@ -82,13 +87,15 @@
 
   <div class="container-fluid">
 
-<% if notice %>
-<p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-<p class="alert alert-danger"><%= alert %></p>
-<% end %>
-
+    <div id="notice-wrapper">
+      <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
+    </div>
+    
     <%= yield %>
 
     </section>
@@ -101,19 +108,26 @@
                 </div>
                 <div class="col-sm-6 text-right">
                   <p>Design by <a href="#" class="external">Wpetrie</a></p>
-                  <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
                 </div>
               </div>
             </div>
           </footer>
-          <!-- JavaScript files-->
-          <script src="https://d19m59y37dris4.cloudfront.net/admin/1-4-5/vendor/jquery/jquery.min.js"></script>
+          <!-- JavaScript files -->
           <script src="https://d19m59y37dris4.cloudfront.net/admin/1-4-5/vendor/popper.js/umd/popper.min.js"> </script>
           <script src="https://d19m59y37dris4.cloudfront.net/admin/1-4-5/vendor/bootstrap/js/bootstrap.min.js"></script>
           <script src="https://d19m59y37dris4.cloudfront.net/admin/1-4-5/vendor/jquery.cookie/jquery.cookie.js"> </script>       
           <script src="https://d19m59y37dris4.cloudfront.net/admin/1-4-5/vendor/jquery-validation/jquery.validate.min.js"></script>
-
+          
           <!-- Main File-->
           <script src="https://d19m59y37dris4.cloudfront.net/admin/1-4-5/js/front.js"></script>
+          <script>
+            $(document).ready(function(){
+              setTimeout(function(){
+                $("#notice-wrapper").fadeOut("slow", function() {
+                  $(this).remove();
+                })
+              }, 2500);
+            });
+          </script>
   </body>
 </html>
